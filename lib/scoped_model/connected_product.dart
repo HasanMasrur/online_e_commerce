@@ -28,10 +28,13 @@ class ConnectedProductsModel extends Model {
       'userEmail': _authenticatedUser.email,
       'userId': _authenticatedUser.id
     };
+    print(".....................................");
+    print(_authenticatedUser.id);
     try {
       final http.Response response = await http.post(
           'https://flutter-projects-90bdb.firebaseio.com/products.json?auth=${_authenticatedUser.token}',
           body: json.encode(productData));
+
       {
         if (response.statusCode != 200 && response.statusCode != 201) {
           _isLoading = false;
