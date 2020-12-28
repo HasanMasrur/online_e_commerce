@@ -1,4 +1,3 @@
-import 'package:appsone/Moduls/authmode.dart';
 import 'package:appsone/Moduls/product.dart';
 import 'package:appsone/pages/auth.dart';
 import 'package:appsone/pages/product_admin.dart';
@@ -58,8 +57,7 @@ class _MyAppState extends State<MyApp> {
               !_isAuthenticated ? AuthPage() : ProductsAdminPage(_model),
         },
         onGenerateRoute: (RouteSettings settings) {
-          if(!_isAuthenticated)
-          {
+          if (!_isAuthenticated) {
             return MaterialPageRoute<bool>(
               builder: (BuildContext context) => AuthPage(),
             );
